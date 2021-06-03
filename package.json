@@ -5,15 +5,43 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "start": "next start"
+    "start": "next start",
+    "lint-fix:ts": "eslint 'src/**/*.ts{,x}' --fix",
+    "check:ts": "tsc --noEmit",
+    "format": "prettier --write \"src/**/*.{json,{j,t}s{,x},scss,}\""
   },
   "dependencies": {
+    "@material-ui/core": "^4.11.4",
+    "@material-ui/lab": "^4.0.0-alpha.58",
+    "axios": "^0.21.1",
+    "fontsource-roboto": "^4.0.0",
     "next": "10.2.3",
     "react": "17.0.2",
-    "react-dom": "17.0.2"
+    "react-dom": "17.0.2",
+    "react-hook-form": "^7.7.1"
   },
   "devDependencies": {
-    "@types/react": "17.0.9",
-    "typescript": "4.3.2"
+    "@types/node": "^15.0.2",
+    "@types/react": "^17.0.5",
+    "@types/react-dom": "^17.0.3",
+    "@typescript-eslint/eslint-plugin": "2.29.0",
+    "@typescript-eslint/eslint-plugin-tslint": "3.0.1",
+    "@typescript-eslint/parser": "3.0.1",
+    "eslint": "7.10.0",
+    "eslint-config-prettier": "6.12.0",
+    "eslint-config-react-app": "5.2.1",
+    "eslint-loader": "^4.0.2",
+    "eslint-plugin-flowtype": "5.2.0",
+    "eslint-plugin-import": "2.22.1",
+    "eslint-plugin-jest": "24.0.2",
+    "eslint-plugin-jsx-a11y": "6.3.1",
+    "eslint-plugin-prettier": "3.1.4",
+    "eslint-plugin-react": "7.21.3",
+    "eslint-plugin-react-hooks": "4.1.2",
+    "prettier": "2.0.4",
+    "sass": "^1.32.12",
+    "tslint": "6.1.2",
+    "tslint-react": "5.0.0",
+    "typescript": "^4.2.4"
   }
 }
