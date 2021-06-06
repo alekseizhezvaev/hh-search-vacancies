@@ -36,7 +36,7 @@ export const VacancyLink: React.FC<Props> = ({ name, employer, salary, id, addre
         </Grid>
 
         {salary ? (
-          <Grid item>
+          <Grid item xs={12} sm={3}>
             {salary.from && !salary.to ? 'от ' : ''}
             {salary.from ? `${salary.from}` : ''}
             {salary.from && salary.to ? ' - ' : ''}

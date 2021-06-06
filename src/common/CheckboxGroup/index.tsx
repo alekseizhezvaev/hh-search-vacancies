@@ -1,6 +1,13 @@
 import React, { Dispatch, SetStateAction } from 'react';
 
-import { Checkbox, FormControlLabel, FormGroup, Grid, Typography } from '@material-ui/core';
+import {
+  Checkbox,
+  FormControlLabel,
+  FormGroup,
+  Grid,
+  Typography,
+  useMediaQuery,
+} from '@material-ui/core';
 
 type Props = {
   list: { id: string; name: string }[];
@@ -10,6 +17,8 @@ type Props = {
 };
 
 export const CheckboxGroup: React.FC<Props> = ({ list, title, state, setState }) => {
+  const matches = useMediaQuery('(min-width:600px)');
+
   const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     const id = event.target.name;
 
@@ -33,7 +42,7 @@ export const CheckboxGroup: React.FC<Props> = ({ list, title, state, setState })
       </Grid>
 
       <Grid item container>
-        <FormGroup row>
+        <FormGroup row={matches}>
           {list.map((item) => (
             <FormControlLabel
               control={
