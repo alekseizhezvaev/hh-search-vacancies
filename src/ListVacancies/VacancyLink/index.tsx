@@ -35,18 +35,20 @@ export const VacancyLink: React.FC<Props> = ({ name, employer, salary, id, addre
           </NextLink>
         </Grid>
 
-        {salary ? (
-          <Grid item xs={12} sm={3}>
-            {salary.from && !salary.to ? 'от ' : ''}
-            {salary.from ? `${salary.from}` : ''}
-            {salary.from && salary.to ? ' - ' : ''}
-            {!salary.from && salary.to ? 'до ' : ''}
-            {salary.to ? `${salary.to}` : ''}
-            {salary.currency === 'RUR' ? ' руб.' : ' ' + salary.currency}
-          </Grid>
-        ) : (
-          'з/п не указана'
-        )}
+        <Grid item xs={12} sm={3}>
+          {salary ? (
+            <div>
+              {salary.from && !salary.to ? 'от ' : ''}
+              {salary.from ? `${salary.from}` : ''}
+              {salary.from && salary.to ? ' - ' : ''}
+              {!salary.from && salary.to ? 'до ' : ''}
+              {salary.to ? `${salary.to}` : ''}
+              {salary.currency === 'RUR' ? ' руб.' : ' ' + salary.currency}
+            </div>
+          ) : (
+            'з/п не указана'
+          )}
+        </Grid>
       </Grid>
 
       <Grid className={classes.info} container item>

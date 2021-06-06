@@ -6,7 +6,6 @@ import { useRouter } from 'next/dist/client/router';
 import { Vacancy as VacancyType } from 'src/common/types';
 import { Layout } from 'src/common/Layout';
 import { Ymap } from 'src/common/Ymap';
-import { ErrorPage } from 'src/ErrorPage';
 
 const useStyles = makeStyles(() => ({
   skill: {
@@ -111,8 +110,8 @@ export const Vacancy: React.FC = () => {
             </Typography>
           </Grid>
 
-          {vacancyObject?.salary ? (
-            <Grid item>
+          <Grid item>
+            {vacancyObject.salary ? (
               <Typography component="h2" variant="h5">
                 {vacancyObject.salary.from ? `от ${vacancyObject.salary.from}` : ''}
                 {vacancyObject.salary.to ? ` до ${vacancyObject.salary.to}` : ''}
@@ -121,10 +120,10 @@ export const Vacancy: React.FC = () => {
                   ? ' руб.'
                   : ` ${vacancyObject.salary.currency}`}
               </Typography>
-            </Grid>
-          ) : (
-            'з/п не указана'
-          )}
+            ) : (
+              'з/п не указана'
+            )}
+          </Grid>
         </Grid>
 
         <Grid container item justify="space-between">
