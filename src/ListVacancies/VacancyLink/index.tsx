@@ -27,7 +27,7 @@ export const VacancyLink: React.FC<Props> = ({ name, employer, salary, id, addre
   return (
     <Grid className={classes.wrapper} container spacing={2}>
       <Grid container item justify="space-between">
-        <Grid className={classes.name} item>
+        <Grid className={classes.name} item xs={12} sm={9}>
           <NextLink href={`/vacancy/${id}`}>
             <Link underline="hover" color="primary">
               {name}
